@@ -1,20 +1,35 @@
 import React, { Component } from "react";
-
+import styled from "styled-components";
 import Friend from "./Friend";
+
+const Friends = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+`;
+
+const FriendCard = styled.div`
+  width: 200px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+`;
 
 const FriendsList = props => {
   return (
-    <div className="Friends">
+    <Friends>
       {props.friends.map(friend => {
         return (
-          <Friend
-            deleteFriend={props.deleteFriend}
-            key={friend.id}
-            friend={friend}
-          />
+          <FriendCard>
+            <Friend
+              deleteFriend={props.deleteFriend}
+              key={friend.id}
+              friend={friend}
+            />
+          </FriendCard>
         );
       })}
-    </div>
+    </Friends>
   );
 };
 

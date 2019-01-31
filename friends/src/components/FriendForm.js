@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  margin: 0 auto;
+`;
 
 class FriendForm extends Component {
   constructor(props) {
@@ -31,7 +40,7 @@ class FriendForm extends Component {
 
   render() {
     return (
-      <form>
+      <Form>
         <label>Name</label>
         <input
           onChange={this.handleChanges}
@@ -57,7 +66,7 @@ class FriendForm extends Component {
           name="age"
         />
         <button onClick={this.handleSubmit}>Submit</button>
-      </form>
+      </Form>
     );
   }
 }

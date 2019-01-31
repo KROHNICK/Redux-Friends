@@ -10,7 +10,7 @@ class Friend extends Component {
 
   handleDelete = () => {
     this.setState({ deleting: true }, () => {
-      this.props.deleteFriend(this.props.friend.id);
+      this.props.deleteFriend(this.props.friend);
     });
   };
 
@@ -20,7 +20,7 @@ class Friend extends Component {
         <p>{this.props.friend.name}</p>
         <p>{this.props.friend.age}</p>
         <p>{this.props.friend.email}</p>
-        <button id={this.props.friend.id} onClick={this.props.onDelete}>
+        <button id={this.props.friend.id} onClick={this.props.deleteFriend}>
           Delete
         </button>
       </div>

@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 import FriendsList from "./components/FriendsList";
 import FriendForm from "./components/FriendForm";
 import { getFriends, addFriend, updateFriend, deleteFriend } from "./actions";
+import styled from "styled-components";
+
+const APP = styled.div`
+  text-align: center;
+`;
 
 class App extends Component {
   componentDidMount() {
@@ -17,11 +22,8 @@ class App extends Component {
   };
 
   render() {
-    {
-      console.log(this.props.friends);
-    }
     return (
-      <div className="App">
+      <APP>
         <FriendForm
           addFriend={this.props.addFriend}
           savingFriends={this.props.savingFriends}
@@ -33,7 +35,7 @@ class App extends Component {
           friends={this.props.friends}
           deleteFriend={this.deleteFriend}
         />
-      </div>
+      </APP>
     );
   }
 }
